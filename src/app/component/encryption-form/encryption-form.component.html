@@ -1,0 +1,23 @@
+<form class="encryption-form" [formGroup]="formData">
+  <mat-form-field>
+    <mat-label>{{ text }}</mat-label>
+    <input matInput formControlName="textValue">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{ passPhrase }}</mat-label>
+    <input matInput formControlName="passPhraseValue">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Algorithm</mat-label>
+    <mat-select formControlName="algorithmValue">
+      <mat-option *ngFor="let algo of algorithms" [value]="algo">{{algo}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="btnClick()" [disabled]="!formData.valid">{{ btnTxt }}</button>
+  <br><br><br>
+  <mat-form-field>
+    <mat-label>Result</mat-label>
+    <input matInput readonly="true" [value]="result">
+    <mat-icon class="copy" *ngIf="result !== ''" matSuffix [cdkCopyToClipboard]="result" matTooltip="Copy text">content_copy</mat-icon>
+  </mat-form-field>
+</form>

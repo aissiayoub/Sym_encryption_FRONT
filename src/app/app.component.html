@@ -1,0 +1,14 @@
+<div class="home">
+  <h1>{{ title }}</h1>
+  <div class="encryption-section">
+    <div class="form encryption">
+      <h2>Encrypt your text</h2>
+      <app-encryption-form text="Text to encrypt" passPhrase="Passphrase to encrypt" btnTxt="Encrypt" [result]="resultEncryption" (btnEvent)="encrypt($event)"></app-encryption-form>
+    </div>
+    <div class="separator"></div>
+    <div class="form decryption">
+      <h2>Decrypt your text</h2>
+    <app-encryption-form text="Text to decrypt" passPhrase="Passphrase to decrypt" btnTxt="Decrypt" [result]="resultDecryption" (btnEvent)="decrypt($event)"></app-encryption-form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.encryption-form{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  ::ng-deep{
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: #fff;
+    }
+  }
+  button{
+    width: 30%;
+  }
+  .copy{
+    cursor: pointer;
+  }
+}
